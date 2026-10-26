@@ -34,6 +34,10 @@ COPY ./public_html /var/www/html
 COPY ./node-app /var/www/node-app
 COPY ./python-app /var/www/python-app
 
+# --- FIX: Give www-data ownership and write permissions ---
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 775 /var/www/html
+
 # Install npm dependencies if package.json exists
 WORKDIR /var/www/node-app
 RUN if [ -f package.json ]; then npm install --omit=dev; fi
