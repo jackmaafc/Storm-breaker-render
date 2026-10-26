@@ -1,0 +1,10 @@
+{
+  "name": "render-node-app",
+  "version": "1.0.0",
+  "description": "Internal Node.js service for public_html hosting",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
